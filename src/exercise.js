@@ -102,5 +102,16 @@ function fizzBuzz(n) {
     console.log(output || i);
   }
 }
-fizzBuzz(12)
+fizzBuzz(15)
 // Exercise 17 Create a function called findLongestWord that takes an array of strings and logs the longest string.
+function findLongestWord(arrayStr){
+  let palabraLarga = "";
+  for (palabra of arrayStr){
+      if (palabra.length > palabraLarga.length){
+          palabraLarga = palabra;
+      }
+  }
+  return palabraLarga;
+}
+
+console.log(findLongestWord(["sol", "mano", "cuento"]));
