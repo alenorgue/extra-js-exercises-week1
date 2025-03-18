@@ -53,9 +53,15 @@ function checkEvenOdd(number){
 
 
 //Exercise 11 Create a function called sumArray that takes an array of numbers and returns the sum of all numbers.
-function sumArray(numbers){
-    let 
+function sumArray(numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  return sum;
 }
+
+console.log(sumArray([1, 1, 3, 1, 1]));
 // Exercise 12 Write a function called splitString that creates an array from a string, splitting it by a each character.
 function splitString(text){return text.split("");
 }
@@ -76,19 +82,25 @@ const characters = ["o", "l", "l", "e", "h"];
 // expected result is "olleh"
 
 // Exercise 15 After you've learned how to do this three steps, can you create a function that checks if a word is palindrome? A palindrome is a word that reads the same backward as forward. For example, "anna" is a palindrome. Your function called isPalindrome will receive a string and should return true if the string is a palindrome and false if it is not.
-
+function isPalindrome(word) {
+    if (word === word.split("").reverse().join("")) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 // Exercise 16 Create a function called fizzBuzz that logs every number from 1 to n, replacing multiples of 3 with "Fizz", multiples of 5 with "Buzz", and multiples of both with "FizzBuzz". Example: fizzBuzz(10) should log the following:
 
-1
-2
-Fizz
-4
-Buzz
-Fizz
-7
-8
-Fizz
-Buzz
-
+function fizzBuzz(n) {
+  for (let i = 1; i <= n; i++) {
+    let output = "";
+    if (i % 5 === 0 && i % 3 === 0) output += "FizzBuzz";
+    if (i % 3 === 0) output += "Fizz";
+    if (i % 5 === 0) output += "Buzz";
+   
+    console.log(output || i);
+  }
+}
+fizzBuzz(12)
 // Exercise 17 Create a function called findLongestWord that takes an array of strings and logs the longest string.
